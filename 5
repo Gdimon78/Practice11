@@ -1,0 +1,32 @@
+from random import randint
+lst1 = []
+for i in range(10):
+  lst1.append(randint(1, 100))
+lst1.sort()
+print("first: ",lst1)
+
+lst2 = []
+for i in range(10):
+  lst2.append(randint(1, 100))
+lst2.sort()
+print("second: ",lst2)
+
+def merge(list1, list2):
+  i = 0
+  j = 0
+  merged = []
+  while i < len(list1) and j < len(list2):
+    if list1[i] < list2[j]:
+      merged.append(list1[i])
+      i=i+1
+    else:
+      merged.append(list2[j])
+      j=j+1
+  merged += list1[i:]
+  merged += list2[j:] 
+  print(merged)
+  
+merge(lst1,lst2)
+first:  [5, 6, 20, 24, 33, 62, 80, 86, 94, 94]
+second:  [2, 7, 8, 23, 51, 57, 67, 80, 88, 94]
+[2, 5, 6, 7, 8, 20, 23, 24, 33, 51, 57, 62, 67, 80, 80, 86, 88, 94, 94, 94]
