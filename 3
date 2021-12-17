@@ -1,0 +1,24 @@
+from random import randint
+
+def countSort(n):
+  
+  lst = []
+  for i in range(n):
+    lst.append(randint(1, 100))
+  print(lst)
+    
+  numbers=[]
+  for i in range(100):
+    numbers+=[0]
+  for i in lst:
+    numbers[i]+=1
+  
+  j=0
+  for i in range(100):
+    if numbers[i]>0:
+      for k in range(numbers[i]):
+        lst[j]=i
+        j=j+1
+  print("Отсортированный: ",lst)
+
+countSort(10)
